@@ -14,6 +14,12 @@ Route::get('gecko', function () {
     ]);
 });
 
+Route::get('egg', function () {
+    return view('user.pages.egg', [
+        'title' => 'Data Telur Leopard Gecko'
+    ]);
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

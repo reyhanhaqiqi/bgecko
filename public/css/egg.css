@@ -1,0 +1,460 @@
+/* mobile view */
+body {
+    background-color: #0E111E !important;
+    color: #FFFFFF;
+}
+
+@media (min-width: 320px) {
+
+    /* navbar */
+    .navbar {
+        background-color: #0E111E;
+        margin-top: 20px;
+    }
+
+    .navbar .navbar-brand img {
+        width: 80px;
+    }
+
+    .navbar .navbar-nav a {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .navbar .btn-call {
+        display: inline-block;
+        background-color: #39DB4A;
+        padding: 9px 17px;
+        border-radius: 100px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .navbar .btn-call a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .navbar .btn-call img {
+        width: 18px;
+        margin-right: 5px;
+    }
+
+
+    /* title section */
+    .title-section h4 {
+        margin-top: 110px;
+        color: #FF6868;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .title-section h1 {
+        margin-bottom: 70px;
+        color: #FFFFFF;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .search .input-group {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .search input.form-control {
+        background-color: #252635;
+        color: #ffffff;
+        border-radius: 20px;
+        border: none;
+        padding: 20px;
+        padding-left: 10px;
+    }
+
+    .search input.form-control:focus {
+        box-shadow: none;
+    }
+
+    .search i {
+        padding: 25px 10px;
+        padding-left: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #252635;
+        color: #727171;
+    }
+
+    .search .input-group .form-control::placeholder {
+        color: #727171;
+    }
+
+    /* data gecko section */
+    .data-gecko-section {
+        margin-bottom: 200px;
+    }
+
+    .data-gecko-section .gecko-card {
+        margin-bottom: 50px;
+        background-color: #161B2F;
+        width: 95%;
+        border-radius: 40px;
+    }
+
+    .data-gecko-section .gecko-card .id-number {
+        background-color: #252635;
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .data-gecko-section .gecko-card .id-number h1 {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .data-gecko-section .card-body .line-1 {
+        position: relative;
+    }
+
+    .data-gecko-section .card-body .line-1 .type {
+        position: absolute;
+        top: 0;
+        left: 140px;
+    }
+
+    .data-gecko-section .card-body .line-2 {
+        position: relative;
+    }
+
+    .data-gecko-section .card-body .line-2 .born {
+        position: absolute;
+        top: 0;
+        left: 140px;
+    }
+
+    .gecko-card .card-body .card-title {
+        color: #515151;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .card-text {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .description .card-text {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+    .gecko-card .card-body .family .card-title {
+        color: #FF6868;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .family .card-text {
+        color: #FFE605;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+/* tablet view */
+@media (min-width: 768px) {
+
+    /* navbar */
+    .navbar {
+        background-color: #0E111E;
+        margin-top: 20px;
+    }
+
+    .navbar .navbar-brand img {
+        width: 100px;
+    }
+
+    .navbar .navbar-nav a {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .navbar .btn-call {
+        display: inline-block;
+        background-color: #39DB4A;
+        padding: 9px 17px;
+        border-radius: 100px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .navbar .btn-call a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .navbar .btn-call img {
+        width: 20px;
+        margin-right: 5px;
+    }
+
+    /* title section */
+    .title-section h4 {
+        margin-top: 110px;
+        color: #FF6868;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .title-section h1 {
+        margin-bottom: 150px;
+        color: #FFFFFF;
+        font-size: 55px;
+        font-weight: 500;
+    }
+
+    .search .input-group {
+        position: absolute;
+        width: 70%;
+        margin-top: 110px;
+        right: 0;
+    }
+
+    .search input.form-control {
+        background-color: #252635;
+        color: #ffffff;
+        border-radius: 20px;
+        border: none;
+        padding: 20px;
+        padding-left: 10px;
+    }
+
+    .search input.form-control:focus {
+        box-shadow: none;
+    }
+
+    .search i {
+        padding: 25px 10px;
+        padding-left: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #252635;
+        color: #727171;
+    }
+
+    .search .input-group .form-control::placeholder {
+        color: #727171;
+    }
+
+    /* data gecko section */
+    .data-gecko-section {
+        margin-bottom: 200px;
+    }
+
+    .data-gecko-section .gecko-card {
+        margin-bottom: 70px;
+        background-color: #161B2F;
+        width: 300px;
+        border-radius: 40px;
+    }
+
+    .data-gecko-section .gecko-card .id-number {
+        background-color: #252635;
+        width: 50px;
+        height: 50px;
+        border-radius: 13px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .data-gecko-section .gecko-card .id-number h1 {
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .card-title {
+        color: #515151;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .card-text {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .description .card-text {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+    .gecko-card .card-body .family .card-title {
+        color: #FF6868;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .family .card-text {
+        color: #FFE605;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+/* desktop view */
+@media (min-width: 1440px) {
+
+    /* navbar */
+    .navbar {
+        background-color: #0E111E;
+        margin-top: 20px;
+    }
+
+    .navbar .navbar-brand img {
+        width: 100px;
+    }
+
+    .navbar .navbar-nav a {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .navbar .btn-call {
+        background-color: #39DB4A;
+        padding: 9px 17px;
+        border-radius: 100px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .navbar .btn-call a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .navbar .btn-call img {
+        width: 20px;
+        margin-right: 5px;
+    }
+
+    /* title section */
+    .title-section h4 {
+        margin-top: 110px;
+        color: #FF6868;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .title-section h1 {
+        margin-bottom: 150px;
+        color: #FFFFFF;
+        font-size: 55px;
+        font-weight: 500;
+    }
+
+    .search .input-group {
+        position: absolute;
+        width: 70%;
+        margin-top: 110px;
+        right: 0;
+    }
+
+    .search input.form-control {
+        background-color: #252635;
+        color: #ffffff;
+        border-radius: 20px;
+        border: none;
+        padding: 20px;
+        padding-left: 10px;
+    }
+
+    .search input.form-control:focus {
+        box-shadow: none;
+    }
+
+    .search i {
+        padding: 25px 10px;
+        padding-left: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #252635;
+        color: #727171;
+    }
+
+    .search .input-group .form-control::placeholder {
+        color: #727171;
+    }
+
+    /* data gecko section */
+    .data-gecko-section {
+        margin-bottom: 200px;
+    }
+
+    .data-gecko-section .gecko-card {
+        margin-bottom: 70px;
+        background-color: #161B2F;
+        width: 300px;
+        border-radius: 40px;
+    }
+
+    .data-gecko-section .gecko-card .id-number {
+        background-color: #252635;
+        width: 50px;
+        height: 50px;
+        border-radius: 13px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .data-gecko-section .gecko-card .id-number h1 {
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .card-title {
+        color: #515151;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .card-text {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .description .card-text {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+    .gecko-card .card-body .family .card-title {
+        color: #FF6868;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .gecko-card .card-body .family .card-text {
+        color: #FFE605;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}

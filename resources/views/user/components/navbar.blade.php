@@ -17,7 +17,8 @@
                     href="gecko">Gecko</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light me-5" href="#">Data Telur</a>
+                    <a class="nav-link {{ ($title == 'Data Telur Leopard Gecko') ? 'text-success' : 'text-light' }} me-5"
+                        href="egg">Data Telur</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="#">Perawatan</a>

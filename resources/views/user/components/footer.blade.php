@@ -30,7 +30,7 @@
                         <a href="gecko" class="text-decoration-none" style="color: #555555">Gecko</a>
                     </p>
                     <p>
-                        <a href="" class="text-decoration-none" style="color: #555555">Data Telur</a>
+                        <a href="egg" class="text-decoration-none" style="color: #555555">Data Telur</a>
                     </p>
                     <p>
                         <a href="" class="text-decoration-none" style="color: #555555">Perawatan</a>

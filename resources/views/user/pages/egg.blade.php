@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- styling css --}}
-    <link rel="stylesheet" href="css/gecko.css">
+    <link rel="stylesheet" href="css/egg.css">
 
     {{-- title name --}}
     <title>{{ $title }}</title>
@@ -25,14 +25,14 @@
         <div class="row">
             <div class="title col-md-6 col-sm-12">
                 <h4>LIST DATA</h4>
-                <h1 class="mt-4">Data Leopard Gecko</h1>
+                <h1 class="mt-4">Data Telur</h1>
             </div>
 
             <div class="search col-md-6 col-sm-12 position-relative">
                 <form action="" method="post">
                     <div class="input-group">
                         <i class="fas fa-search"></i>
-                        <input type="text" class="form-control" placeholder="Cari data leopard gecko..."
+                        <input type="text" class="form-control" placeholder="Cari data telur leopard gecko..."
                             aria-label="Search">
                     </div>
                 </form>
