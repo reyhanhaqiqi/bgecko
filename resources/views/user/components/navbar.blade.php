@@ -10,15 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mx-auto mb-2 mb-lg-0 ">
                 <li class="nav-item active">
-                    <a class="nav-link {{ ($title == 'BGecko - Sistem Informasi Leopard Gecko') ? 'text-success' : 'text-light' }} me-5"
-                        aria-current="page" href="/">Home</a>
+                    <a class="nav-link {{ Route::is('home') ? 'text-success' : 'text-light' }} me-5" aria-current="page"
+                        href="{{ route('home') }}">Home</a>
                 </li>
-                <a class="nav-link {{ ($title == 'Data Leopard Gecko') ? 'text-success' : 'text-light' }} me-5"
-                    href="gecko">Gecko</a>
+                <a class="nav-link {{ Route::is('gecko') ? 'text-success' : 'text-light' }} me-5"
+                    href="{{ route('gecko') }}">Gecko</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title == 'Data Telur Leopard Gecko') ? 'text-success' : 'text-light' }} me-5"
-                        href="egg">Data Telur</a>
+                    <a class="nav-link {{ Route::is('egg') ? 'text-success' : 'text-light' }} me-5"
+                        href="{{ route('egg') }}">Data
+                        Telur</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="#">Perawatan</a>

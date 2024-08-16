@@ -21,7 +21,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- title name --}}
-    <title>{{ $title }}</title>
+    <title>@yield('title', config('app.name', 'Laravel'))</title>
 </head>
 
 <body>

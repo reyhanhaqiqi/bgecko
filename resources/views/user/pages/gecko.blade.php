@@ -9,12 +9,12 @@
     {{-- styling css --}}
     <link rel="stylesheet" href="css/gecko.css">
 
-    {{-- title name --}}
-    <title>{{ $title }}</title>
 </head>
 
 <body>
     @extends('layouts.app')
+
+    @section('title', 'Data Leopard Gecko')
 
     @section('content')
     {{-- navbar section --}}

@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- styling css --}}
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/index.css">
 
-    {{-- title name --}}
-    <title>{{ $title }}</title>
 </head>
 
 <body>
     @extends('layouts.app')
+
+    @section('title', 'BGecko - Sistem Informasi Leopard Gecko')
 
     @section('content')
     {{-- navbar section --}}

@@ -9,12 +9,12 @@
     {{-- styling css --}}
     <link rel="stylesheet" href="css/egg.css">
 
-    {{-- title name --}}
-    <title>{{ $title }}</title>
 </head>
 
 <body>
     @extends('layouts.app')
+
+    @section('title', 'Data Telur Leopard Gecko')
 
     @section('content')
     {{-- navbar section --}}

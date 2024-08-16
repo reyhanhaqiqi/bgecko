@@ -2,22 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('user.pages.home', [
-        'title' => 'BGecko - Sistem Informasi Leopard Gecko'
-    ]);
-});
-
-Route::get('gecko', function () {
-    return view('user.pages.gecko', [
-        'title' => 'Data Leopard Gecko'
-    ]);
-});
-
-Route::get('egg', function () {
-    return view('user.pages.egg', [
-        'title' => 'Data Telur Leopard Gecko'
-    ]);
+// Route for user view
+Route::prefix('/')->group(function () {
+    Route::view('/', 'user.pages.index')->name('home');
+    Route::view('gecko', 'user.pages.gecko')->name('gecko');
+    Route::view('egg', 'user.pages.egg')->name('egg');
 });
 
 Route::middleware([
