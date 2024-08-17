@@ -40,32 +40,32 @@
         </div>
     </div>
 
-    {{-- data gecko section --}}
-    <div class="container data-gecko-section">
+    {{-- data egg section --}}
+    <div class="container data-egg-section">
         <div class="row">
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-                @include('user.components.gecko-card')
+                @include('user.components.egg-card')
             </div>
         </div>
     </div>

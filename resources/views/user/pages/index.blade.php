@@ -29,7 +29,7 @@
                 </h1>
                 <p class="description">Dimana anda bisa mencari informasi mengenai hewan hias Leopard Gecko</p>
                 <div class="button">
-                    <a href="">Data Gecko</a>
+                    <a href="{{ route('gecko') }}">Data Gecko</a>
                 </div>
             </div>
 

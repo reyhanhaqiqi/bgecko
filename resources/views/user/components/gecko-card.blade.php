@@ -10,13 +10,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ url('assets/gecko-image1.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('assets/gecko-image1.png') }}" class="d-block w-100" alt="Gecko Image 1">
             </div>
             <div class="carousel-item">
-                <img src="{{ url('assets/gecko-image2.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('assets/gecko-image2.png') }}" class="d-block w-100" alt="Gecko Image 2">
             </div>
             <div class="carousel-item">
-                <img src="{{ url('assets/gecko-image3.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('assets/gecko-image3.png') }}" class="d-block w-100" alt="Gecko Image 3">
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
 
             <div class="born">
                 <h5 class="card-title">Kelahiran</h5>
-                <p class="card-text">08 Nov, 2021</p>
+                <p class="card-text">08 Nov 2021</p>
             </div>
         </div>
 

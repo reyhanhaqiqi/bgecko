@@ -90,18 +90,18 @@ body {
     }
 
     /* data gecko section */
-    .data-gecko-section {
+    .data-egg-section {
         margin-bottom: 200px;
     }
 
-    .data-gecko-section .gecko-card {
+    .data-egg-section .egg-card {
         margin-bottom: 50px;
         background-color: #161B2F;
         width: 95%;
         border-radius: 40px;
     }
 
-    .data-gecko-section .gecko-card .id-number {
+    .data-egg-section .egg-card .id-number {
         background-color: #252635;
         width: 70px;
         height: 70px;
@@ -110,58 +110,46 @@ body {
         top: 10px;
     }
 
-    .data-gecko-section .gecko-card .id-number h1 {
+    .data-egg-section .egg-card .id-number h1 {
         color: #FFFFFF;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 500;
     }
 
-    .data-gecko-section .card-body .line-1 {
-        position: relative;
+    .data-egg-section .egg-card img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
-    .data-gecko-section .card-body .line-1 .type {
-        position: absolute;
-        top: 0;
-        left: 140px;
-    }
-
-    .data-gecko-section .card-body .line-2 {
-        position: relative;
-    }
-
-    .data-gecko-section .card-body .line-2 .born {
-        position: absolute;
-        top: 0;
-        left: 140px;
-    }
-
-    .gecko-card .card-body .card-title {
+    .egg-card .card-body .card-title {
         color: #515151;
         font-size: 14px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .card-text {
+    .egg-card .card-body .card-text {
         color: #ffffff;
         font-size: 14px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .description .card-text {
+    .egg-card .card-body .description .card-text {
         color: #ffffff;
         font-size: 14px;
         font-weight: 400;
         text-align: justify;
     }
 
-    .gecko-card .card-body .family .card-title {
+    .egg-card .card-body .family .card-title {
         color: #FF6868;
         font-size: 14px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .family .card-text {
+    .egg-card .card-body .family .card-text {
         color: #FFE605;
         font-size: 14px;
         font-weight: 500;
@@ -256,18 +244,18 @@ body {
     }
 
     /* data gecko section */
-    .data-gecko-section {
+    .data-egg-section {
         margin-bottom: 200px;
     }
 
-    .data-gecko-section .gecko-card {
+    .data-egg-section .egg-card {
         margin-bottom: 70px;
         background-color: #161B2F;
         width: 300px;
         border-radius: 40px;
     }
 
-    .data-gecko-section .gecko-card .id-number {
+    .data-egg-section .egg-card .id-number {
         background-color: #252635;
         width: 50px;
         height: 50px;
@@ -276,38 +264,38 @@ body {
         top: 10px;
     }
 
-    .data-gecko-section .gecko-card .id-number h1 {
+    .data-egg-section .egg-card .id-number h1 {
         color: #FFFFFF;
         font-size: 20px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .card-title {
+    .egg-card .card-body .card-title {
         color: #515151;
         font-size: 16px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .card-text {
+    .egg-card .card-body .card-text {
         color: #ffffff;
         font-size: 16px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .description .card-text {
+    .egg-card .card-body .description .card-text {
         color: #ffffff;
         font-size: 14px;
         font-weight: 400;
         text-align: justify;
     }
 
-    .gecko-card .card-body .family .card-title {
+    .egg-card .card-body .family .card-title {
         color: #FF6868;
         font-size: 16px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .family .card-text {
+    .egg-card .card-body .family .card-text {
         color: #FFE605;
         font-size: 16px;
         font-weight: 500;
@@ -401,18 +389,18 @@ body {
     }
 
     /* data gecko section */
-    .data-gecko-section {
+    .data-egg-section {
         margin-bottom: 200px;
     }
 
-    .data-gecko-section .gecko-card {
+    .data-egg-section .egg-card {
         margin-bottom: 70px;
         background-color: #161B2F;
         width: 300px;
         border-radius: 40px;
     }
 
-    .data-gecko-section .gecko-card .id-number {
+    .data-egg-section .egg-card .id-number {
         background-color: #252635;
         width: 50px;
         height: 50px;
@@ -421,38 +409,46 @@ body {
         top: 10px;
     }
 
-    .data-gecko-section .gecko-card .id-number h1 {
+    .data-egg-section .egg-card .id-number h1 {
         color: #FFFFFF;
         font-size: 20px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .card-title {
+    .data-egg-section .egg-card img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .egg-card .card-body .card-title {
         color: #515151;
         font-size: 16px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .card-text {
+    .egg-card .card-body .card-text {
         color: #ffffff;
         font-size: 16px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .description .card-text {
+    .egg-card .card-body .description .card-text {
         color: #ffffff;
         font-size: 14px;
         font-weight: 400;
         text-align: justify;
     }
 
-    .gecko-card .card-body .family .card-title {
+    .egg-card .card-body .family .card-title {
         color: #FF6868;
         font-size: 16px;
         font-weight: 500;
     }
 
-    .gecko-card .card-body .family .card-text {
+    .egg-card .card-body .family .card-text {
         color: #FFE605;
         font-size: 16px;
         font-weight: 500;

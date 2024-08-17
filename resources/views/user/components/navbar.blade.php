@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top pt-3 pb-3">
+    <div class=" container">
         <a class="navbar-brand" href="/">
             <img src="{{ url('assets/logo-icon.png') }}" alt="Logo Icon">
         </a>
@@ -21,13 +21,13 @@
                         href="{{ route('egg') }}">Data
                         Telur</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Perawatan</a>
+                <li class="nav-item {{ Route::is('egg') ? 'text-success' : 'text-light' }}">
+                    <a class="nav-link text-light" href="{{ route('animal-care') }}">Perawatan</a>
                 </li>
             </ul>
 
             <div class="btn-call">
-                <a href="">
+                <a href="https://wa.me/6289682174815">
                     <img src="{{ url('assets/phone-icon.png') }}" alt="Phone Icon">
                     Hubungi
                 </a>

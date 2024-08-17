@@ -82,6 +82,11 @@ body {
         font-weight: 500;
     }
 
+    .hero-section .button:active {
+        transform: translateY(-15px);
+        transition: .1s ease-in-out;
+    }
+
     .hero-section .hero-image img {
         width: 300px;
         margin-top: 50px;
@@ -309,6 +314,11 @@ body {
         font-weight: 500;
     }
 
+    .hero-section .button:active {
+        transform: translateY(-15px);
+        transition: .1s ease-in-out;
+    }
+
     .hero-section .hero-image img {
         width: 370px;
     }
@@ -531,6 +541,11 @@ body {
         text-decoration: none;
         font-size: 22;
         font-weight: 500;
+    }
+
+    .hero-section .button:active {
+        transform: translateY(-15px);
+        transition: .1s ease-in-out;
     }
 
     .hero-section .hero-image img {

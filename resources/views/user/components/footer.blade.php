@@ -24,16 +24,17 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Menu Utama</h6>
                     <p>
-                        <a href="/" class="text-decoration-none" style="color: #555555">Home</a>
+                        <a href="{{ route('home') }}" class="text-decoration-none" style="color: #555555">Home</a>
                     </p>
                     <p>
-                        <a href="gecko" class="text-decoration-none" style="color: #555555">Gecko</a>
+                        <a href="{{ route('gecko') }}" class="text-decoration-none" style="color: #555555">Gecko</a>
                     </p>
                     <p>
-                        <a href="egg" class="text-decoration-none" style="color: #555555">Data Telur</a>
+                        <a href="{{ route('egg') }}" class="text-decoration-none" style="color: #555555">Data Telur</a>
                     </p>
                     <p>
-                        <a href="" class="text-decoration-none" style="color: #555555">Perawatan</a>
+                        <a href="{{ route('animal-care') }}" class="text-decoration-none"
+                            style="color: #555555">Perawatan</a>
                     </p>
                 </div>
                 <!-- Grid column -->
