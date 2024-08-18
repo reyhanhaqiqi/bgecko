@@ -20,6 +20,12 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {{-- styling css --}}
+    <link rel="stylesheet" href="{{ asset('web/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/gecko.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/egg.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animal-care.css') }}">
+
     {{-- favicon --}}
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
@@ -28,7 +34,13 @@
 </head>
 
 <body>
+    {{-- navbar section --}}
+    @include('web.components.navbar')
+
     @yield('content')
+
+    {{-- footer section --}}
+    @include('web.components.footer')
 
     {{-- Bootstrap 5.2.5 JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
