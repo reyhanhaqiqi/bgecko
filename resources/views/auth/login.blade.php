@@ -1,48 +1,64 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.auth')
 
-        <x-validation-errors class="mb-4" />
+@section('title', 'Bgecko - Login')
 
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
+@section('content')
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+  <div class="container p-5">
+    <div class="card login-card">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <img src="{{ asset('auth/images/login.svg') }}" alt="login" class="login-card-img">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="brand-wrapper">
+              <img src="{{ asset('auth/images/logo.png') }}" alt="logo" class="logo">
             </div>
-        @endsession
+            <p class="login-card-description">Sign into your account</p>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            @if ($errors->has('emailNotFound'))
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+              <i class="fas fa-exclamation-triangle me-2 icon"></i>
+              <div>
+                {{ $errors->first('emailNotFound') }}
+              </div>
             </div>
+            @endif
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            @if ($errors->has('passwordIncorrect'))
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              <div>
+                {{ $errors->first('passwordIncorrect') }}
+              </div>
             </div>
+            @endif
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+            <form method="POST" action="{{ route('login') }}">
+              @csrf
+              <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input required type="email" name="email" id="email" class="form-control" placeholder="Email address">
+              </div>
+              <div class="form-group mb-4">
+                <label for="password" class="sr-only">Password</label>
+                <input required type="password" name="password" id="password" class="form-control"
+                  placeholder="Password">
+              </div>
+              <button type="submit" id="login" class="btn btn-block login-btn mb-4">Login</button>
+            </form>
+            <a href="#!" class="forgot-password-link">Forgot password?</a>
+            <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register') }}">Register here</a>
+            </p>
+            <nav class="login-card-footer-nav">
+              <a href="#!">Terms of use.</a>
+              <a href="#!">Privacy policy</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+@endsection

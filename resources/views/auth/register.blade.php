@@ -1,60 +1,74 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.auth')
 
-        <x-validation-errors class="mb-4" />
+@section('title', 'Bgecko - Register')
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+@section('content')
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+  <div class="container">
+    <div class="card login-card">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="brand-wrapper">
+              <img src="{{ asset('auth/images/logo.png') }}" alt="logo" class="logo">
             </div>
+            <p class="login-card-description">Sign Up for your account</p>
 
-            <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            @if ($errors->has('email'))
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              <div>
+                {{ $errors->first('email') }}
+              </div>
             </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
-
-                            <div class="ms-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-label>
-                </div>
             @endif
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ms-4">
-                    {{ __('Register') }}
-                </x-button>
+            @if ($errors->has('password'))
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              <div>
+                {{ $errors->first('password') }}
+              </div>
             </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+            @endif
+
+            <form method="POST" action="{{ route('register') }}">
+              @csrf
+              <div class="form-group">
+                <label for="name" class="sr-only">Full Name</label>
+                <input required type="text" name="name" id="name" class="form-control" placeholder="Full Name"
+                  value="{{ old('name') }}">
+              </div>
+              <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input required type="email" name="email" id="email" class="form-control" placeholder="Email address"
+                  value="{{ old('email') }}">
+              </div>
+              <div class="form-group mb-4">
+                <label for="password" class="sr-only">Password</label>
+                <input required type="password" name="password" id="password" class="form-control"
+                  placeholder="Your Password">
+              </div>
+              <div class="form-group mb-4">
+                <label for="password_confirmation" class="sr-only">Repeat Password</label>
+                <input required type="password" name="password_confirmation" id="password_confirmation"
+                  class="form-control" placeholder="Repeat Password">
+              </div>
+              <button type="submit" id="register" class="btn btn-block login-btn mb-4">Sign Up</button>
+            </form>
+            <p class="login-card-footer-text">Already have an account? <a href="{{ route('login') }}">Login</a>
+            </p>
+            <nav class="login-card-footer-nav">
+              <a href="">Terms of use.</a>
+              <a href="">Privacy policy</a>
+            </nav>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <img src="{{ asset('auth/images/register.svg') }}" alt="login" class="login-card-img">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+@endsection
