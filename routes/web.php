@@ -16,6 +16,8 @@ Route::get('register', [UserController::class, 'showRegisterForm'])->name('regis
 Route::post('register', [UserController::class, 'register']);
 Route::get('login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('login', [UserController::class, 'login']);
+Route::get('forgot-password', [UserController::class, 'showForgotPasswordForm'])->name('forgot-password');
+Route::post('forgot-password', [UserController::class, 'updatePassword']);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('dashboard', function () {

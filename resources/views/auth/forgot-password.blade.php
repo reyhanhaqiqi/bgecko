@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Bgecko - Login')
+@section('title', 'Bgecko - Forgot Password')
 
 @section('content')
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -8,14 +8,14 @@
     <div class="card login-card">
       <div class="row no-gutters">
         <div class="col-md-6">
-          <img src="{{ asset('auth/images/login.svg') }}" alt="login" class="login-card-img">
+          <img src="{{ asset('auth/images/forgot-password.svg') }}" alt="login" class="login-card-img">
         </div>
         <div class="col-md-6">
           <div class="card-body">
             <div class="brand-wrapper">
               <img src="{{ asset('auth/images/logo.png') }}" alt="logo" class="logo">
             </div>
-            <p class="login-card-description">Sign into your account</p>
+            <p class="login-card-description">Change your password</p>
 
             @if ($errors->has('emailNotFound'))
             <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -26,30 +26,34 @@
             </div>
             @endif
 
-            @if ($errors->has('passwordIncorrect'))
+            @if ($errors->has('password'))
             <div class="alert alert-danger d-flex align-items-center" role="alert">
               <i class="fas fa-exclamation-triangle me-2"></i>
               <div>
-                {{ $errors->first('passwordIncorrect') }}
+                {{ $errors->first('password') }}
               </div>
             </div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('forgot-password') }}">
               @csrf
               <div class="form-group">
                 <label for="email" class="sr-only">Email</label>
                 <input required type="email" name="email" id="email" class="form-control" placeholder="Email address">
               </div>
               <div class="form-group mb-4">
-                <label for="password" class="sr-only">Password</label>
+                <label for="password" class="sr-only">New Password</label>
                 <input required type="password" name="password" id="password" class="form-control"
-                  placeholder="Password">
+                  placeholder="New Password">
               </div>
-              <button type="submit" id="login" class="btn btn-block login-btn mb-4">Login</button>
+              <div class="form-group mb-4">
+                <label for="password_confirmation" class="sr-only">Repeat Password</label>
+                <input required type="password" name="password_confirmation" id="password_confirmation"
+                  class="form-control" placeholder="Repeat Password">
+              </div>
+              <button type="submit" id="forgot-password" class="btn btn-block login-btn mb-4">Save Password</button>
             </form>
-            <a href="{{ route('forgot-password') }}" class="forgot-password-link">Forgot password?</a>
-            <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register') }}">Register here</a>
+            <p class="login-card-footer-text">Return to login? <a href="{{ route('login') }}">Login</a>
             </p>
             <nav class="login-card-footer-nav">
               <a href="#!">Terms of use.</a>
