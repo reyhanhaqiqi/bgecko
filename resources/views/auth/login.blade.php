@@ -35,6 +35,7 @@
             </div>
             @endif
 
+
             <form method="POST" action="{{ route('login') }}">
               @csrf
               <div class="form-group">
@@ -52,8 +53,8 @@
             <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register') }}">Register here</a>
             </p>
             <nav class="login-card-footer-nav">
-              <a href="#!">Terms of use.</a>
-              <a href="#!">Privacy policy</a>
+              <a href="">Terms of use.</a>
+              <a href="">Privacy policy</a>
             </nav>
           </div>
         </div>

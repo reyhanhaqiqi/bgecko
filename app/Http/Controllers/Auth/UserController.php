@@ -65,7 +65,7 @@ class UserController extends Controller
             ]);
         }
 
-        return redirect()->intended('dashboard');
+        return redirect()->route('dashboard');
     }
 
     // Forgot password function
@@ -74,7 +74,7 @@ class UserController extends Controller
         return view('auth.forgot-password');
     }
 
-    public function updatePassword(Request $request, User $user)
+    public function updatePassword(Request $request)
     {
         $request->validate([
             'email' => 'required|string|email|max:255',

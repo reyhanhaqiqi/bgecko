@@ -39,7 +39,8 @@
               @csrf
               <div class="form-group">
                 <label for="email" class="sr-only">Email</label>
-                <input required type="email" name="email" id="email" class="form-control" placeholder="Email address">
+                <input required type="email" name="email" id="email" class="form-control" placeholder="Email address"
+                  value="{{ old('email') }}">
               </div>
               <div class="form-group mb-4">
                 <label for="password" class="sr-only">New Password</label>
@@ -56,8 +57,8 @@
             <p class="login-card-footer-text">Return to login? <a href="{{ route('login') }}">Login</a>
             </p>
             <nav class="login-card-footer-nav">
-              <a href="#!">Terms of use.</a>
-              <a href="#!">Privacy policy</a>
+              <a href="">Terms of use.</a>
+              <a href="">Privacy policy</a>
             </nav>
           </div>
         </div>
