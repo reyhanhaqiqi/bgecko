@@ -30,6 +30,7 @@
                                     <th> Deskripsi </th>
                                     <th> Perkawinan </th>
                                     <th> Gambar </th>
+                                    <th> Aksi </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,10 +57,24 @@
                                     <td>
                                         <img src="{{ Storage::url('geckos/' . $gecko->galleryGeckos->url) }}"
                                             alt="image" style="width: 70px; height: 70px" />
-                                        <img src="{{ Storage::url('geckos/' . $gecko->galleryGeckos->url) }}"
-                                            alt="image" style="width: 70px; height: 70px" />
-                                        <img src="{{ Storage::url('geckos/' . $gecko->galleryGeckos->url) }}"
-                                            alt="image" style="width: 70px; height: 70px" />
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column">
+                                            <button type="button" class="btn btn-gradient-dark btn-icon-text mb-2">
+                                                <i class="mdi mdi-file-check btn-icon-append"></i>
+                                                Edit
+                                            </button>
+                                            <form id="delete-form-{{ $gecko->id }}"
+                                                action="{{ route('gecko.destroy', $gecko->id) }}" method="POST"
+                                                style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" class="btn btn-gradient-danger btn-icon-text"
+                                                    onclick="confirmDelete({{ $gecko->id }})">
+                                                    <i class="mdi mdi-delete-alert btn-icon-prepend"></i> Delete
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -76,5 +91,22 @@
     <!-- partial -->
 </div>
 <!-- main-panel ends -->
-
 @endsection
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id) {
+    Swal.fire({
+        title: 'Anda yakin?',
+        text: 'Ingin menghapus data ini?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Hapus',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById('delete-form-' + id).submit();
+            Swal.fire('Terhapus!', '', 'Sukses');
+        } 
+    });
+}
+</script>

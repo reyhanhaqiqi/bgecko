@@ -7,6 +7,7 @@ use App\Models\Egg;
 use App\Models\GalleryEgg;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminEggController extends Controller
 {
@@ -52,5 +53,28 @@ class AdminEggController extends Controller
         }
 
         return redirect()->route('egg.index')->with('status', 'Data telur telah ditambahkan!');
+    }
+
+    public function destroy($id)
+    {
+        $egg = Egg::findOrFail($id);
+
+        $egg->forceDelete();
+
+        $galleryEggs = $egg->galleryEggs;
+
+        if ($galleryEggs) {
+            foreach ($galleryEggs as $galleryEgg) {
+                $filePath = 'public/eggs/' . $galleryEgg->url;
+                if (Storage::exists($filePath)) {
+                    Storage::delete($filePath);
+                }
+
+                $galleryEgg->delete();
+            }
+        }
+
+
+        return redirect()->route('egg.index');
     }
 }

@@ -59,4 +59,15 @@ class AdminGeckoController extends Controller
 
         return redirect()->route('gecko.index')->with('status', 'Data Leopard Gecko berhasil ditambahkan!');
     }
+
+    public function destroy($id)
+    {
+        $gecko = Gecko::findOrFail($id);
+
+        $gecko->forceDelete();
+
+        $gecko->galleryEggs()->delete();
+
+        return redirect()->route('gecko.index');
+    }
 }
