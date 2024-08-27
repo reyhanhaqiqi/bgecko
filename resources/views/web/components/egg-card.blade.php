@@ -3,7 +3,7 @@
         <h1>01</h1>
     </div>
 
-    <img src="{{ url('assets/egg-image1.png') }}" alt="Egg Image">
+    <img src="{{ asset('web/images/egg-image1.png') }}" alt="Egg Image">
 
     <div class="card-body">
 

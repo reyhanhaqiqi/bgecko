@@ -19,6 +19,7 @@
         "vite-plugin-static-copy": "^1.0.6"
     },
     "dependencies": {
-        "alertifyjs": "^1.14.0"
+        "alertifyjs": "^1.14.0",
+        "sweetalert2": "^11.6.13"
     }
 }

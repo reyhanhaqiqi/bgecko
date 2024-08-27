@@ -18,6 +18,6 @@ class Egg extends Model
 
     public function galleryEggs()
     {
-        $this->hasMany(GalleryEgg::class, 'egg_id');
+        return $this->hasOne(GalleryEgg::class, 'egg_id');
     }
 }

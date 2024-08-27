@@ -10,13 +10,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ url('assets/gecko-image1.png') }}" class="d-block w-100" alt="Gecko Image 1">
+                <img src="{{ asset('web/images/gecko-image1.png') }}" class="d-block w-100" alt="Gecko Image 1">
             </div>
             <div class="carousel-item">
-                <img src="{{ url('assets/gecko-image2.png') }}" class="d-block w-100" alt="Gecko Image 2">
+                <img src="{{ asset('web/images/gecko-image2.png') }}" class="d-block w-100" alt="Gecko Image 2">
             </div>
             <div class="carousel-item">
-                <img src="{{ url('assets/gecko-image3.png') }}" class="d-block w-100" alt="Gecko Image 3">
+                <img src="{{ asset('web/images/gecko-image3.png') }}" class="d-block w-100" alt="Gecko Image 3">
             </div>
         </div>
     </div>

@@ -95,4 +95,16 @@ class UserController extends Controller
 
         return redirect()->route('login')->with('status', 'Password has been update successfully');
     }
+
+    // Signout function
+    public function destroy(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('success', 'You has been sign out');
+    }
 }

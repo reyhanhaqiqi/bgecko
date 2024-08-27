@@ -21,6 +21,6 @@ class Gecko extends Model
 
     public function galleryGeckos()
     {
-        return $this->hasMany(GalleryGecko::class, 'gecko_id');
+        return $this->hasOne(GalleryGecko::class, 'gecko_id');
     }
 }

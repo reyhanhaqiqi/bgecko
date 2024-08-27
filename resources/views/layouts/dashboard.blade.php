@@ -11,14 +11,19 @@
     <link rel="stylesheet" href="{{ asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('admin/css/style.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png')}}" />
+    {{-- favicon --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     {{-- title name --}}
     <title>Dashboard Bgecko</title>
@@ -56,7 +61,27 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{ asset('admin/js/dashboard.js')}}"></script>
+    <script src="{{ asset('admin/js/chart.js')}}"></script>
     <!-- End custom js for this page -->
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session('status'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Sukses!',
+            text: '{{ session('status') }}',
+            showConfirmButton: true,
+        });
+    });
+    </script>
+    @endif
+
+    {{-- Custom JS --}}
+    @yield('scripts')
 </body>
 
 </html>

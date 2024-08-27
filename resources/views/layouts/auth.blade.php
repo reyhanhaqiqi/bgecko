@@ -19,6 +19,9 @@
     {{-- style css --}}
     <link rel="stylesheet" href="{{ asset('auth/css/style.css') }}">
 
+    {{-- favicon --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
     {{-- title name --}}
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 </head>
