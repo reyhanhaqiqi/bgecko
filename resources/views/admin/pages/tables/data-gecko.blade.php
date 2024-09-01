@@ -23,6 +23,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr class="text-center">
+                                    <th> ID </th>
                                     <th> Nama </th>
                                     <th> Tipe </th>
                                     <th> Jenis Kelamin </th>
@@ -37,6 +38,9 @@
                                 @foreach ($geckos as $gecko)
                                 <tr class="text-center">
                                     <td class="py-1">
+                                        {{ $gecko->id }}
+                                    </td>
+                                    <td>
                                         {{ $gecko->nama }}
                                     </td>
                                     <td>
@@ -55,15 +59,20 @@
                                         {{ $gecko->perkawinan }}
                                     </td>
                                     <td>
-                                        <img src="{{ Storage::url('geckos/' . $gecko->galleryGeckos->url) }}"
-                                            alt="image" style="width: 70px; height: 70px" />
+                                        @foreach ($gecko->galleryGeckos as $galleryGecko)
+                                        <img src="{{ Storage::url('geckos/' . $galleryGecko->url) }}" alt="Image"
+                                            width="100">
+                                        @endforeach
                                     </td>
                                     <td>
                                         <div class="d-flex flex-column">
-                                            <button type="button" class="btn btn-gradient-dark btn-icon-text mb-2">
-                                                <i class="mdi mdi-file-check btn-icon-append"></i>
-                                                Edit
-                                            </button>
+                                            <form action="{{ route('gecko.edit', ['gecko' => $gecko->id]) }}"
+                                                method="GET">
+                                                <button type="submit" class="btn btn-gradient-dark btn-icon-text mb-2">
+                                                    <i class="mdi mdi-file-check btn-icon-append"></i>
+                                                    Edit
+                                                </button>
+                                            </form>
                                             <form id="delete-form-{{ $gecko->id }}"
                                                 action="{{ route('gecko.destroy', $gecko->id) }}" method="POST"
                                                 style="display: inline;">

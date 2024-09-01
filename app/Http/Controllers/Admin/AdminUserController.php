@@ -34,12 +34,11 @@ class AdminUserController extends Controller
                 return redirect()->back()->withErrors(['foto_size' => 'Foto yang diupload berukuran lebih dari 2MB.']);
             }
 
-            $image->storeAs('public/profile', $image->hashName());
-
             if ($request->profile_photo_path) {
                 Storage::delete('public/profile/' . $user->profile_photo_path);
             }
 
+            $image->storeAs('public/profile', $image->hashName());
 
             $user->update([
                 'name' => $request->name,

@@ -7,6 +7,7 @@ use App\Models\GalleryGecko;
 use App\Models\Gecko;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminGeckoController extends Controller
 {
@@ -31,9 +32,10 @@ class AdminGeckoController extends Controller
             'tipe' => 'required|string|max:255',
             'jenis_kelamin' => 'required|string',
             'kelahiran' => 'required|date',
-            'deskripsi' => 'nullable|string|max:255',
+            'deskripsi' => 'required|string|max:255',
             'perkawinan' => 'required|string|max:255',
-            'url' => 'required|image|mimes:jpg,jpeg,png',
+            'url' => 'required|array',
+            'url.*' => 'image|mimes:jpg,jpeg,png',
         ]);
 
         $gecko = Gecko::create(
@@ -47,26 +49,93 @@ class AdminGeckoController extends Controller
             ])
         );
 
-        if ($request->has('url')) {
-            $image = $request->file('url');
-            $image->storeAs('public/geckos', $image->hashName());
+        if ($request->hasFile('url')) {
+            foreach ($request->file('url') as $file) {
+                $filename = $file->hashName();
+                $file->storeAs('public/geckos', $filename);
 
-            GalleryGecko::create([
-                'gecko_id' => $gecko->id,
-                'url' => $image->hashName(),
-            ]);
+                $gecko->galleryGeckos()->create(['url' => $filename]);
+            }
         }
 
         return redirect()->route('gecko.index')->with('status', 'Data Leopard Gecko berhasil ditambahkan!');
+    }
+
+    public function edit($id)
+    {
+        $gecko = Gecko::findOrFail($id);
+        return view('admin.pages.edit.edit-gecko', compact('gecko'));
+    }
+
+    public function update(Request $request, Gecko $gecko)
+    {
+        $request->validate([
+            'nama' => 'nullable|string|max:255',
+            'tipe' => 'nullable|string|max:255',
+            'jenis_kelamin' => 'nullable|string',
+            'kelahiran' => 'nullable|date',
+            'deskripsi' => 'nullable|string|max:255',
+            'perkawinan' => 'nullable|string|max:255',
+            'url' => 'nullable|array',
+            'url.*' => 'image|mimes:jpg,jpeg,png',
+        ]);
+
+        if ($request->hasFile('url')) {
+            $image = $request->file('url');
+
+            foreach ($gecko->galleryGeckos as $galleryGecko) {
+                if ($galleryGecko->url) {
+                    Storage::delete('public/geckos/' . $galleryGecko->url);
+                }
+            }
+
+            $gecko->galleryGeckos()->delete();
+
+            foreach ($request->file('url') as $file) {
+                if ($file instanceof \Illuminate\Http\UploadedFile) {
+                    $filename = $file->hashName();
+                    $file->storeAs('public/geckos', $filename);
+                }
+
+                $gecko->galleryGeckos()->create([
+                    'url' => $filename,
+                ]);
+            }
+
+            $gecko->update([
+                'nama' => $request->nama,
+                'tipe' => $request->tipe,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'kelahiran' => $request->kelahiran,
+                'deskripsi' => $request->deskripsi,
+                'perkawinan' => $request->perkawinan,
+            ]);
+        }
+
+        $gecko->update([
+            'nama' => $request->nama,
+            'tipe' => $request->tipe,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'kelahiran' => $request->kelahiran,
+            'deskripsi' => $request->deskripsi,
+            'perkawinan' => $request->perkawinan,
+        ]);
+
+
+        return redirect()->route('gecko.index')->with('status', 'Data Leopard Gecko berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
         $gecko = Gecko::findOrFail($id);
 
-        $gecko->forceDelete();
+        foreach ($gecko->galleryGeckos as $galleryGecko) {
+            if ($galleryGecko->url) {
+                Storage::delete('public/geckos/' . $galleryGecko->url);
+            }
+        }
 
-        $gecko->galleryEggs()->delete();
+        $gecko->forceDelete();
 
         return redirect()->route('gecko.index');
     }

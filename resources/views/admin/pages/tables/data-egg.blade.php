@@ -24,6 +24,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr class="text-center">
+                                    <th> ID </th>
                                     <th> Tanggal Inkubasi </th>
                                     <th> Keterangan </th>
                                     <th> Perkawinan </th>
@@ -34,6 +35,7 @@
                             <tbody>
                                 @foreach ($eggs as $egg)
                                 <tr class="text-center">
+                                    <td>{{ $egg->id }}
                                     <td>{{ \Carbon\Carbon::parse($egg->tanggal_inkubasi)->translatedFormat('d M Y') }}
                                     </td>
                                     <td>{{ $egg->keterangan }}</td>

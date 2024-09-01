@@ -10,7 +10,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">Input Data</li>
-                    <li class="breadcrumb-item active" aria-current="page">Input Data Telur</li>
+                    <li class="breadcrumb-item active" aria-current="page">Telur</li>
                 </ol>
             </nav>
         </div>
@@ -50,7 +50,6 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                            <button class="btn btn-light">Cancel</button>
                         </form>
                     </div>
                 </div>

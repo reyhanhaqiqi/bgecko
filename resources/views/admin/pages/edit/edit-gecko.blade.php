@@ -6,10 +6,10 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> Input Data Leopard Gecko </h3>
+            <h3 class="page-title"> Edit Data Leopard Gecko </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"></a>Input Data</li>
+                    <li class="breadcrumb-item"></a>Edit Data</li>
                     <li class="breadcrumb-item active" aria-current="page">Leopard Gecko</li>
                 </ol>
             </nav>
@@ -18,45 +18,46 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <form class="forms-sample" method="POST" action="{{ route('gecko.store') }}"
-                            enctype="multipart/form-data">
+                        <form class="forms-sample" method="POST"
+                            action="{{ route('gecko.update', ['gecko' => $gecko->id]) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="form-group">
                                 <label for="exampleInputName1">Nama</label>
                                 <input required type="text" name="nama" class="form-control" id="exampleInputName1"
-                                    placeholder="Nama leopard Gecko">
+                                    value="{{ $gecko->nama }}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Tipe</label>
                                 <input required type="text" name="tipe" class="form-control" id="exampleInputEmail3"
-                                    placeholder="Tipe Leopard Gecko">
+                                    value="{{ $gecko->tipe }}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleSelectGender">Jenis Kelamin</label>
                                 <select required class="form-select" name="jenis_kelamin" id="exampleSelectGender">
-                                    <option>Jantan</option>
-                                    <option>Betina</option>
+                                    <option {{ $gecko->jenis_kelamin == 'jantan' ? 'selected' : ''}}>Jantan</option>
+                                    <option {{ $gecko->jenis_kelamin == 'betina' ? 'selected' : ''}}>Betina</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputCity1">Kelahiran</label>
                                 <input required type="date" name="kelahiran" class="form-control" id="exampleInputCity1"
-                                    placeholder="Tanggal Kelahiran">
+                                    value="{{ $gecko->kelahiran }}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Deskripsi</label>
                                 <textarea class="form-control" name="deskripsi" id="exampleTextarea1"
-                                    rows="4"></textarea>
+                                    rows="4">{{ $gecko->deskripsi }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputCity1">Perkawinan</label>
                                 <input required type="text" name="perkawinan" class="form-control"
-                                    id="exampleInputCity1" placeholder="Perkawinan">
+                                    id="exampleInputCity1" value="{{ $gecko->perkawinan }}">
                             </div>
                             <div class="form-group">
                                 <label>Upload Gambar</label>
-                                <input required type="file" name="url[]" class="file-upload-default"
-                                    id="profilePhotoInput" multiple>
+                                <input type="file" name="url[]" class="file-upload-default" id="profilePhotoInput"
+                                    multiple>
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" disabled
                                         placeholder="Upload Gambar">
@@ -66,7 +67,8 @@
                                     </span>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                            <button type="submit" class="btn btn-gradient-primary me-2">Update</button>
+                            <a href="{{ route('gecko.index') }}" class="btn btn-light">Cancel</a>
                         </form>
                     </div>
                 </div>
