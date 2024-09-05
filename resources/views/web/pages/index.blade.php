@@ -66,42 +66,21 @@
         <h4>TELUR GECKO</h4>
         <h1 class="mt-4">Beberapa Informasi <br><span>Data Telur</span></h1>
 
+        @foreach ($eggs as $egg)
         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
             <div class="information-box pt-5">
                 <div class="egg-icon">
                     <img class="d-block mx-auto mt-3" src="{{ asset('web/images/egg-icon.png') }}" alt="Egg Icon">
                 </div>
-                <img class="d-block mx-auto" src="{{ asset('web/images/egg-information-image1.png') }}"
-                    alt="Egg Image1">
-                <h3>Telur SHTCT</h3>
-                <p>Telur ini merupakan........</p>
-                <p class="yellow-text">SHTCT x Hybino</p>
+                <img class="d-block mx-auto gallery" src="{{ Storage::url('eggs/' . $egg->galleryEggs->url) }}"
+                    alt="Egg Image">
+                <h3 class="text-capitalize">{{ \Carbon\Carbon::parse($egg->tanggal_inkubasi)->translatedFormat('d M Y')
+                    }}</h3>
+                <p class="text-capitalize">{{ $egg->keterangan }}</p>
+                <p class="yellow-text">{{ $egg->perkawinan }}</p>
             </div>
         </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
-            <div class="information-box pt-5">
-                <div class="egg-icon">
-                    <img class="d-block mx-auto mt-3" src="{{ asset('web/images/egg-icon.png') }}" alt="Egg Icon">
-                </div>
-                <img class="d-block mx-auto" src="{{ asset('web/images/egg-information-image2.png') }}"
-                    alt="Egg Image2">
-                <h3>Telur Raptor</h3>
-                <p>Telur ini merupakan........</p>
-                <p class="yellow-text">MS BS PH Raptor x MSE BS</p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
-            <div class="information-box pt-5">
-                <div class="egg-icon">
-                    <img class="d-block mx-auto mt-3" src="{{ asset('web/images/egg-icon.png') }}" alt="Egg Icon">
-                </div>
-                <img class="d-block mx-auto" src="{{ asset('web/images/egg-information-image3.png') }}"
-                    alt="Egg Image3">
-                <h3>Telur Sunglow</h3>
-                <p>Telur ini merupakan........</p>
-                <p class="yellow-text">SG x SG</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

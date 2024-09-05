@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\GalleryGecko;
 use App\Models\Gecko;
+use App\Models\NotificationFeature;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -81,7 +82,6 @@ class AdminGeckoController extends Controller
         ]);
 
         if ($request->hasFile('url')) {
-            $image = $request->file('url');
 
             foreach ($gecko->galleryGeckos as $galleryGecko) {
                 if ($galleryGecko->url) {

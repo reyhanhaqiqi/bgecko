@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminEggController;
 use App\Http\Controllers\Admin\AdminGeckoController;
+use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Web\AnimalCareController;
@@ -31,10 +32,7 @@ Route::post('logout', [UserController::class, 'destroy'])->name('logout');
 
 // Route with middleware for admin
 Route::prefix('dashboard')->middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/', function () {
-        return view('admin.index');
-    })->name('dashboard');
-
+    Route::get('/', [AdminIndexController::class, 'index'])->name('dashboard');
     Route::resource('egg', AdminEggController::class);
     Route::resource('gecko', AdminGeckoController::class);
     Route::get('profile', [AdminUserController::class, 'index'])->name('profile');
