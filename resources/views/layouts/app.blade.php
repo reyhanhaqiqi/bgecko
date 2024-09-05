@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('web/css/gecko.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/egg.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/animal-care.css') }}">
+    <link rel="stylesheet" href="{{ asset('errors/css/empty-search.css') }}">
 
     {{-- favicon --}}
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">

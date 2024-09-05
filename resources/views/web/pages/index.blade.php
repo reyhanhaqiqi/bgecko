@@ -33,28 +33,28 @@
             <div class="category-box pt-5">
                 <img src="{{ asset('web/images/category-image1.png') }}" alt="Category Image1">
                 <h3>Raptor</h3>
-                <p>(13 Ekor)</p>
+                <p>+10 Ekor</p>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 text-center d-flex justify-content-center">
             <div class="category-box pt-5">
                 <img src="{{ asset('web/images/category-image2.png') }}" alt="Category Image2">
                 <h3>Sunglow</h3>
-                <p>(15 Ekor)</p>
+                <p>+10 Ekor</p>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 text-center d-flex justify-content-center">
             <div class="category-box pt-5">
                 <img src="{{ asset('web/images/category-image3.png') }}" alt="Category Image3">
                 <h3>SHTCT</h3>
-                <p>(15 Ekor)</p>
+                <p>+10 Ekor</p>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 text-center d-flex justify-content-center">
             <div class="category-box pt-5">
                 <img src="{{ asset('web/images/category-image4.png') }}" alt="Category Image4">
                 <h3>Jungle</h3>
-                <p>(10 Ekor)</p>
+                <p>+10 Ekor</p>
             </div>
         </div>
     </div>

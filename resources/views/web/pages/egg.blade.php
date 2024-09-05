@@ -13,11 +13,11 @@
         </div>
 
         <div class="search col-md-6 col-sm-12 position-relative">
-            <form action="" method="post">
+            <form action="{{ route('egg.search') }}" method="GET">
                 <div class="input-group">
                     <i class="fas fa-search"></i>
-                    <input type="text" class="form-control" placeholder="Cari data telur leopard gecko..."
-                        aria-label="Search">
+                    <input type="text" name="query" id="search-query" class="form-control"
+                        placeholder="Cari data telur leopard gecko..." aria-label="Search">
                 </div>
             </form>
         </div>
@@ -27,30 +27,17 @@
 {{-- data egg section --}}
 <div class="container data-egg-section">
     <div class="row">
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
+        @if($eggs->isEmpty())
+        <div class="col-12 text-center">
+            @include('errors.empty-search')
         </div>
+        @else
+        @foreach ($eggs as $egg)
         <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
+            @include('web.components.egg-card', compact('egg'))
         </div>
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
-        </div>
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
-        </div>
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
-        </div>
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
-        </div>
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
-        </div>
-        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 d-flex justify-content-center">
-            @include('web.components.egg-card')
-        </div>
+        @endforeach
+        @endif
     </div>
 </div>
 

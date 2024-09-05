@@ -4,14 +4,20 @@ use App\Http\Controllers\Admin\AdminEggController;
 use App\Http\Controllers\Admin\AdminGeckoController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\Web\AnimalCareController;
+use App\Http\Controllers\Web\EggController;
+use App\Http\Controllers\Web\GeckoController;
+use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // Route for user view
 Route::prefix('/')->group(function () {
-    Route::view('/', 'web.pages.index')->name('home');
-    Route::view('gecko', 'web.pages.gecko')->name('gecko');
-    Route::view('egg', 'web.pages.egg')->name('egg');
-    Route::view('animal-care', 'web.pages.animal-care')->name('animal-care');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('gecko', [GeckoController::class, 'index'])->name('gecko');
+    Route::get('gecko/search', [GeckoController::class, 'search'])->name('gecko.search');
+    Route::get('egg', [EggController::class, 'index'])->name('egg');
+    Route::get('egg/search', [EggController::class, 'search'])->name('egg.search');
+    Route::get('animal-care', [AnimalCareController::class, 'index'])->name('animal-care');
 });
 
 // Route for authentication
