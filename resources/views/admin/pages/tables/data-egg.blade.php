@@ -18,9 +18,13 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card" style="background-color: #161B2F">
                     <div class="card-body">
-                        <h4 class="card-title text-white">Data Telur</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="card-title text-white">Data Telur</h4>
+                            <a href="{{ route('egg.export') }}" class="btn btn-success">
+                                <i class="fa fa-file-excel"></i> Export to Excel
+                            </a>
+                        </div>
                         <br>
-                        </p>
                         <table class="table table-striped" style="table-layout: fixed">
                             <thead>
                                 <tr class="text-center">

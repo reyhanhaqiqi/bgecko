@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\Export\GeckosExport;
 use App\Http\Controllers\Controller;
 use App\Models\GalleryGecko;
 use App\Models\Gecko;
@@ -9,6 +10,7 @@ use App\Models\NotificationFeature;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminGeckoController extends Controller
 {
@@ -135,5 +137,10 @@ class AdminGeckoController extends Controller
         $gecko->forceDelete();
 
         return redirect()->route('gecko.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new GeckosExport, 'geckos.xlsx');
     }
 }
