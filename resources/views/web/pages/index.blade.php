@@ -68,7 +68,7 @@
 
         @foreach ($eggs as $egg)
         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
-            <div class="information-box pt-5">
+            <div class="information-box pt-5 pb-2" style="height: auto">
                 <div class="egg-icon">
                     <img class="d-block mx-auto mt-3" src="{{ asset('web/images/egg-icon.png') }}" alt="Egg Icon">
                 </div>
@@ -76,8 +76,8 @@
                     alt="Egg Image">
                 <h3 class="text-capitalize">{{ \Carbon\Carbon::parse($egg->tanggal_inkubasi)->translatedFormat('d M Y')
                     }}</h3>
-                <p class="text-capitalize">{{ $egg->keterangan }}</p>
-                <p class="yellow-text">{{ $egg->perkawinan }}</p>
+                <p class="text-capitalize" style="word-wrap: break-word;">{{ $egg->keterangan }}</p>
+                <p class="yellow-text" style="word-wrap: break-word;">{{ $egg->perkawinan }}</p>
             </div>
         </div>
         @endforeach

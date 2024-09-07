@@ -35,8 +35,9 @@ Route::post('logout', [UserController::class, 'destroy'])->name('logout');
 // Route with middleware for admin
 Route::prefix('dashboard')->middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', [AdminIndexController::class, 'index'])->name('dashboard');
-    Route::resource('egg', AdminEggController::class);
+    Route::get('/search', [AdminIndexController::class, 'search'])->name('search');
     Route::resource('gecko', AdminGeckoController::class);
+    Route::resource('egg', AdminEggController::class);
     Route::get('profile', [AdminUserController::class, 'index'])->name('profile');
     Route::post('profile', [AdminUserController::class, 'update'])->name('profile.update');
 });

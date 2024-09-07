@@ -17,7 +17,7 @@
             <p class="card-text text-capitalize">{{ $egg->keterangan }}</p>
         </div>
 
-        <div class="family d-inline-block mt-3 mb-3">
+        <div class="family mt-3 mb-3">
             <h5 class="card-title">Perkawinan</h5>
             <p class="card-text text-capitalize">{{ $egg->perkawinan }}</p>
         </div>

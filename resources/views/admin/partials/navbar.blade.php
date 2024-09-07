@@ -12,21 +12,17 @@
       <span class="mdi mdi-menu"></span>
     </button>
     <div class="search-field d-none d-md-block">
-      <form class="d-flex align-items-center h-100" action="#">
+      <form class="d-flex align-items-center h-100" action="{{ route('search') }}" method="GET">
         <div class="input-group">
           <div class="input-group-prepend bg-transparent">
             <i class="input-group-text border-0 mdi mdi-magnify"></i>
           </div>
-          <input type="text" class="form-control bg-transparent border-0 text-white" placeholder="Cari data....">
+          <input type="text" name="query" class="form-control bg-transparent border-0 text-white"
+            placeholder="Cari data....">
         </div>
       </form>
     </div>
     <ul class="navbar-nav navbar-nav-right">
-      <li class="nav-item d-none d-lg-block full-screen-link">
-        <a class="nav-link">
-          <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
-        </a>
-      </li>
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
           aria-expanded="false">

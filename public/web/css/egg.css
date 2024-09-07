@@ -154,7 +154,8 @@ body {
     .egg-card .card-body .family .card-text {
         color: #FFE605;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 400;
+        word-wrap: break-word;
     }
 }
 
