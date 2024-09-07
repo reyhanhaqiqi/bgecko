@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\EggsExport;
+use App\Exports\EggsExport\EggsExport as EggsExportEggsExport;
 use App\Http\Controllers\Controller;
 use App\Models\Egg;
 use App\Models\GalleryEgg;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminEggController extends Controller
 {
@@ -106,5 +109,10 @@ class AdminEggController extends Controller
         $egg->forceDelete();
 
         return redirect()->route('egg.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new EggsExport, 'eggs.xlsx');
     }
 }

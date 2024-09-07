@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exports\Export;
+namespace App\Exports;
 
 use App\Models\Gecko;
 use Maatwebsite\Excel\Concerns\FromCollection;

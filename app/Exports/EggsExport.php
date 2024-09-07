@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Exports\Export;
+namespace App\Exports;
 
+use App\Models\Egg;
 use App\Models\Gecko;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class GeckosExport implements FromCollection, WithHeadings
+class EggsExport implements FromCollection, WithHeadings
 {
     /**
      * @return \Illuminate\Support\Collection
      */
     public function collection()
     {
-        return Gecko::all();
+        return Egg::all();
     }
 
     /**
