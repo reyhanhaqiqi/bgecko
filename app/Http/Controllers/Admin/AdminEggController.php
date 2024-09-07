@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Egg;
 use App\Models\GalleryEgg;
-use App\Models\NotificationFeature;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,10 +12,7 @@ class AdminEggController extends Controller
 {
     public function index()
     {
-        $eggs = Egg::with('galleryEggs')->get()->map(function ($egg) {
-            $egg->formatted_date = Carbon::parse($egg->tanggal_inkubasi)->translatedFormat('d M Y');
-            return $egg;
-        });
+        $eggs = Egg::with('galleryEggs')->paginate(10);
         return view('admin.pages.tables.data-egg', compact('eggs'));
     }
 
@@ -56,25 +51,59 @@ class AdminEggController extends Controller
         return redirect()->route('egg.index')->with('status', 'Data telur telah ditambahkan!');
     }
 
+    public function edit($id)
+    {
+        $egg = Egg::findOrFail($id);
+        return view('admin.pages.edit.edit-egg', compact('egg'));
+    }
+
+    public function update(Request $request, Egg $egg)
+    {
+        $request->validate([
+            'tanggal_inkubasi' => 'nullable|date',
+            'keterangan' => 'nullable|string|max:255',
+            'perkawinan' => 'nullable|string|max:255',
+            'url' => 'nullable|mimes:jpg,jpeg,png',
+        ]);
+
+        if ($request->hasFile('url')) {
+
+            if ($egg->galleryEggs->url) {
+                Storage::delete('public/eggs/' . $egg->galleryEggs->url);
+            }
+
+            $egg->galleryEggs()->forceDelete();
+
+            $image = $request->file('url');
+            $image->storeAs('public/eggs/', $image->hashName());
+
+            $egg->galleryEggs()->create([
+                'url' => $image->hashName(),
+            ]);
+
+            $egg->update([
+                'tanggal_inkubasi' => $request->tanggal_inkubasi,
+                'keterangan' => $request->keterangan,
+                'perkawinan' => $request->perkawinan,
+            ]);
+        }
+
+        $egg->update([
+            'tanggal_inkubasi' => $request->tanggal_inkubasi,
+            'keterangan' => $request->keterangan,
+            'perkawinan' => $request->perkawinan,
+        ]);
+
+        return redirect()->route('egg.index')->with('status', 'Data telur telah berhasil diperbarui!');
+    }
+
     public function destroy($id)
     {
         $egg = Egg::findOrFail($id);
 
+        Storage::delete('public/eggs/' . $egg->galleryEggs->url);
+
         $egg->forceDelete();
-
-        $galleryEggs = $egg->galleryEggs;
-
-        if ($galleryEggs) {
-            foreach ($galleryEggs as $galleryEgg) {
-                $filePath = 'public/eggs/' . $galleryEgg->url;
-                if (Storage::exists($filePath)) {
-                    Storage::delete($filePath);
-                }
-
-                $galleryEgg->delete();
-            }
-        }
-
 
         return redirect()->route('egg.index');
     }

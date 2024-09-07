@@ -54,7 +54,7 @@
 
         <div class="family d-inline-block mt-3 mb-3">
             <h5 class="card-title">Perkawinan</h5>
-            <p class="card-text">{{ $gecko->perkawinan }}</p>
+            <p class="card-text text-capitalize">{{ $gecko->perkawinan }}</p>
         </div>
     </div>
 </div>

@@ -1,5 +1,7 @@
-<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+  style="background-color: #0E111E;">
+  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start"
+    style="background-color: #0E111E;">
     <a class="navbar-brand brand-logo" href="{{ route('dashboard') }}"><img
         src="{{ asset('web/images/logo-icon.png') }}" alt="logo" /></a>
     <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}"><img
@@ -15,7 +17,7 @@
           <div class="input-group-prepend bg-transparent">
             <i class="input-group-text border-0 mdi mdi-magnify"></i>
           </div>
-          <input type="text" class="form-control bg-transparent border-0" placeholder="Cari data....">
+          <input type="text" class="form-control bg-transparent border-0 text-white" placeholder="Cari data....">
         </div>
       </form>
     </div>
@@ -33,17 +35,15 @@
             <span class="availability-status online"></span>
           </div>
           <div class="nav-profile-text me-1">
-            <p class="mb-1 text-black">{{ Auth::user()->name }}</p>
+            <p class="mb-1 text-white">{{ Auth::user()->name }}</p>
           </div>
         </a>
         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-          <a class="dropdown-item" href="#">
-            <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
-          <div class="dropdown-divider"></div>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
           </form>
-          <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
+          <a class="dropdown-item text-white bg-dark"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
             <i class="mdi mdi-logout me-2 text-primary"></i> Signout
           </a>
         </div>

@@ -14,10 +14,7 @@ class AdminGeckoController extends Controller
 {
     public function index()
     {
-        $geckos = Gecko::with('galleryGeckos')->get()->map(function ($gecko) {
-            $gecko->formatted_date = Carbon::parse($gecko->kelahiran)->translatedFormat('d M Y');
-            return $gecko;
-        });
+        $geckos = Gecko::with('galleryGeckos')->paginate(10);
         return view('admin.pages.tables.data-gecko', compact('geckos'));
     }
 
@@ -89,7 +86,7 @@ class AdminGeckoController extends Controller
                 }
             }
 
-            $gecko->galleryGeckos()->delete();
+            $gecko->galleryGeckos()->forceDelete();
 
             foreach ($request->file('url') as $file) {
                 if ($file instanceof \Illuminate\Http\UploadedFile) {

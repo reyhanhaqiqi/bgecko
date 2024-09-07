@@ -4,73 +4,94 @@
 
 <!-- partial -->
 <div class="main-panel">
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="background-color: #252635">
         <div class="page-header">
-            <h3 class="page-title"> Tabel Data Leopard Gecko </h3>
+            <h3 class="page-title text-white"> Tabel Data Leopard Gecko </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a>Tabel</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data Leopard gecko</li>
+                    <li class="breadcrumb-item text-secondary"><a>Tabel</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Data Leopard gecko</li>
                 </ol>
             </nav>
         </div>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
+                <div class="card" style="background-color: #161B2F">
                     <div class="card-body">
-                        <h4 class="card-title">Data Leopard Gecko</h4>
+                        <h4 class="card-title text-white">Data Leopard Gecko</h4>
                         <br>
-                        <table class="table table-striped">
+                        <table class="table table-striped" style="table-layout: fixed">
                             <thead>
                                 <tr class="text-center">
-                                    <th> ID </th>
-                                    <th> Nama </th>
-                                    <th> Tipe </th>
-                                    <th> Jenis Kelamin </th>
-                                    <th> Kelahiran </th>
-                                    <th> Deskripsi </th>
-                                    <th> Perkawinan </th>
-                                    <th> Gambar </th>
-                                    <th> Aksi </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> ID </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Nama </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Tipe </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Jenis Kelamin
+                                    </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Kelahiran </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Deskripsi </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Perkawinan </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Gambar </th>
+                                    <th class="text-white"
+                                        style="background-color: #161B2F; border: 3px solid #252635;"> Aksi </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($geckos as $gecko)
                                 <tr class="text-center">
-                                    <td class="py-1">
+                                    <td class="py-1 text-white"
+                                        style="width: 10%; font-size: 12px; background-color: #161B2F; border: 3px solid #252635;">
                                         {{ $gecko->id }}
                                     </td>
-                                    <td>
+                                    <td class="text-capitalize text-white text-wrap"
+                                        style="font-size: 12px; line-height: 1.7;  background-color: #161B2F; border: 3px solid #252635;">
                                         {{ $gecko->nama }}
                                     </td>
-                                    <td>
+                                    <td class="text-capitalize text-white"
+                                        style="font-size: 12px; background-color: #161B2F; border: 3px solid #252635;">
                                         {{ $gecko->tipe }}
                                     </td>
-                                    <td>
+                                    <td class="text-capitalize text-white"
+                                        style="font-size: 12px; background-color: #161B2F; border: 3px solid #252635;">
                                         {{ $gecko->jenis_kelamin }}
                                     </td>
-                                    <td>
+                                    <td class="text-white"
+                                        style="font-size: 12px; background-color: #161B2F; border: 3px solid #252635;">
                                         {{ \Carbon\Carbon::parse($gecko->kelahiran)->translatedFormat('d M Y') }}
                                     </td>
-                                    <td>
+                                    <td style="font-size: 12px; line-height: 1.7; background-color: #161B2F; border: 3px solid #252635;"
+                                        class="text-start text-white text-wrap">
                                         {{ $gecko->deskripsi }}
                                     </td>
-                                    <td>
+                                    <td class="text-capitalize text-white text-wrap"
+                                        style=" font-size: 12px; line-height: 1.7; background-color: #161B2F; border: 3px solid #252635;">
                                         {{ $gecko->perkawinan }}
                                     </td>
-                                    <td>
-                                        @foreach ($gecko->galleryGeckos as $galleryGecko)
-                                        <img src="{{ Storage::url('geckos/' . $galleryGecko->url) }}" alt="Image"
-                                            width="100">
-                                        @endforeach
+                                    <td style="background-color: #161B2F; border: 3px solid #252635;">
+                                        <div class="d-flex flex-column align-items-center">
+                                            @foreach ($gecko->galleryGeckos as $galleryGecko)
+                                            <img class="d-block mb-2"
+                                                src="{{ Storage::url('geckos/' . $galleryGecko->url) }}" alt="Image"
+                                                width="100">
+                                            @endforeach
+                                        </div>
                                     </td>
-                                    <td>
+
+                                    <td style="background-color: #161B2F; border: 3px solid #252635;">
                                         <div class="d-flex flex-column">
                                             <form action="{{ route('gecko.edit', ['gecko' => $gecko->id]) }}"
                                                 method="GET">
-                                                <button type="submit" class="btn btn-gradient-dark btn-icon-text mb-2">
-                                                    <i class="mdi mdi-file-check btn-icon-append"></i>
-                                                    Edit
+                                                <button type="submit"
+                                                    class="btn btn-gradient-dark btn-icon-text mb-2 ps-4 pe-4">
+                                                    <i class="mdi mdi-file-check btn-icon-prepend"></i>Edit
                                                 </button>
                                             </form>
                                             <form id="delete-form-{{ $gecko->id }}"
@@ -78,9 +99,10 @@
                                                 style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="button" class="btn btn-gradient-danger btn-icon-text"
+                                                <button type="button"
+                                                    class="btn btn-gradient-danger btn-icon-text ps-3 pe-3"
                                                     onclick="confirmDelete({{ $gecko->id }})">
-                                                    <i class="mdi mdi-delete-alert btn-icon-prepend"></i> Delete
+                                                    <i class="mdi mdi-delete btn-icon-prepend"></i>Delete
                                                 </button>
                                             </form>
                                         </div>
@@ -89,15 +111,20 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        <br><br>
+                        <div class="d-flex justify-content-center">
+                            {{ $geckos->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- partial:../../partials/_footer.html -->
+        @include('admin.partials.footer')
+        <!-- partial -->
     </div>
     <!-- content-wrapper ends -->
-    <!-- partial:../../partials/_footer.html -->
-    @include('admin.partials.footer')
-    <!-- partial -->
 </div>
 <!-- main-panel ends -->
 @endsection
@@ -117,5 +144,5 @@
             Swal.fire('Terhapus!', '', 'Sukses');
         } 
     });
-}
+    }
 </script>

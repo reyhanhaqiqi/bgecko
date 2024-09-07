@@ -22,6 +22,7 @@ Route::prefix('/')->group(function () {
 });
 
 // Route for authentication
+
 Route::get('register', [UserController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [UserController::class, 'register']);
 Route::get('login', [UserController::class, 'showLoginForm'])->name('login');
@@ -29,6 +30,7 @@ Route::post('login', [UserController::class, 'login']);
 Route::get('forgot-password', [UserController::class, 'showForgotPasswordForm'])->name('forgot-password');
 Route::post('forgot-password', [UserController::class, 'updatePassword']);
 Route::post('logout', [UserController::class, 'destroy'])->name('logout');
+
 
 // Route with middleware for admin
 Route::prefix('dashboard')->middleware(['auth:sanctum', 'verified'])->group(function () {

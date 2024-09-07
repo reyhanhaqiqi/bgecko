@@ -4,16 +4,16 @@
 
 <!-- partial -->
 <div class="main-panel">
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background-color: #252635;">
     <div class="page-header">
-      <h3 class="page-title">
+      <h3 class="page-title text-white">
         <span class="page-title-icon bg-gradient-primary text-white me-2">
           <i class="mdi mdi-home"></i>
         </span> Dashboard
       </h3>
       <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">
+          <li class="breadcrumb-item active text-white" aria-current="page">
             <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
           </li>
         </ul>
@@ -59,33 +59,35 @@
 
     <div class="row">
       <div class="col-12 grid-margin">
-        <div class="card">
+        <div class="card" style="background-color: #161B2F">
           <div class="card-body">
-            <h4 class="card-title">Data Leopard Baru Ditambahkan</h4>
+            <h4 class="card-title text-white">Data Leopard Baru Ditambahkan</h4>
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr class="text-center">
-                    <th> Gambar </th>
-                    <th> Nama </th>
-                    <th> Status </th>
-                    <th> Terakhir Ditambahkan </th>
+                    <th class="text-white" style="background-color: #161B2F"> Gambar </th>
+                    <th class="text-white" style="background-color: #161B2F"> Nama </th>
+                    <th class="text-white" style="background-color: #161B2F"> Status </th>
+                    <th class="text-white" style="background-color: #161B2F"> Terakhir Ditambahkan </th>
                   </tr>
                 </thead>
                 <br><br>
                 <tbody>
-                  <tr>
+                  <tr t>
                     @foreach ($latestGeckos as $gecko)
-                    <td class="text-center">
+                    <td class="text-center" style="background-color: #161B2F">
                       @foreach ($gecko->galleryGeckos as $galleryGecko)
                       <img src="{{ Storage::url('geckos/' . $galleryGecko->url) }}" class="me-2" alt="image">
                       @endforeach
                     </td>
-                    <td class="text-center"> {{ $gecko->nama }} </td>
-                    <td class="text-center">
+                    <td class="text-center text-white" style="background-color: #161B2F"> {{ $gecko->nama }}
+                    </td>
+                    <td class="text-center" style="background-color: #161B2F">
                       <label class="badge badge-gradient-success">Terbaru</label>
                     </td class="text-center">
-                    <td class="text-center"> {{ $gecko->created_at->diffForHumans() }}</td>
+                    <td class="text-center text-white" style="background-color: #161B2F"> {{
+                      $gecko->created_at->diffForHumans() }}</td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -98,31 +100,32 @@
 
     <div class="row">
       <div class="col-12 grid-margin">
-        <div class="card">
+        <div class="card" style="background-color: #161B2F">
           <div class="card-body">
-            <h4 class="card-title">Data Telur Baru Ditambahkan</h4>
+            <h4 class="card-title text-white">Data Telur Baru Ditambahkan</h4>
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr class="text-center">
-                    <th> Gambar </th>
-                    <th> Perkawinan </th>
-                    <th> Status </th>
-                    <th> Terakhir Ditambahkan </th>
+                    <th class="text-white" style="background-color: #161B2F"> Gambar </th>
+                    <th class="text-white" style="background-color: #161B2F"> Perkawinan </th>
+                    <th class="text-white" style="background-color: #161B2F"> Status </th>
+                    <th class="text-white" style="background-color: #161B2F"> Terakhir Ditambahkan </th>
                   </tr>
                 </thead>
                 <br><br>
                 <tbody>
                   <tr>
                     @foreach ($latestEggs as $egg)
-                    <td class="text-center">
+                    <td class="text-center" style="background-color: #161B2F">
                       <img src="{{ Storage::url('eggs/' . $egg->galleryEggs->url) }}" class="me-2" alt="image">
                     </td>
-                    <td class="text-center"> {{ $egg->perkawinan }} </td>
-                    <td class="text-center">
+                    <td class="text-center text-white" style="background-color: #161B2F"> {{ $egg->perkawinan }} </td>
+                    <td class="text-center" style="background-color: #161B2F">
                       <label class="badge badge-gradient-success">Terbaru</label>
                     </td class="text-center">
-                    <td class="text-center"> {{ $egg->created_at->diffForHumans() }} </td>
+                    <td class="text-center text-white" style="background-color: #161B2F"> {{
+                      $egg->created_at->diffForHumans() }} </td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -132,11 +135,11 @@
         </div>
       </div>
     </div>
+    <!-- partial:partials/_footer.html -->
+    @include('admin.partials.footer')
+    <!-- partial -->
   </div>
   <!-- content-wrapper ends -->
-  <!-- partial:partials/_footer.html -->
-  @include('admin.partials.footer')
-  <!-- partial -->
 </div>
 <!-- main-panel ends -->
 

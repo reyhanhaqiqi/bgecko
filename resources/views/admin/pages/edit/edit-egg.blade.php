@@ -6,10 +6,10 @@
 <div class="main-panel">
     <div class="content-wrapper" style="background-color: #252635">
         <div class="page-header">
-            <h3 class="page-title text-white"> Input Data Leopard Gecko </h3>
+            <h3 class="page-title text-white"> Edit Data Leopard Gecko </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-secondary"></a>Input Data</li>
+                    <li class="breadcrumb-item text-secondary"></a>Edit Data</li>
                     <li class="breadcrumb-item active text-white" aria-current="page">Leopard Gecko</li>
                 </ol>
             </nav>
@@ -18,52 +18,32 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card" style="background-color: #161B2F">
                     <div class="card-body text-white">
-                        <form class="forms-sample" method="POST" action="{{ route('gecko.store') }}"
+                        <form class="forms-sample" method="POST" action="{{ route('egg.update', ['egg' => $egg->id]) }}"
                             enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="form-group">
-                                <label for="exampleInputName1">Nama</label>
-                                <input required type="text" name="nama" class="form-control text-white"
-                                    id="exampleInputName1" placeholder="Nama leopard Gecko"
+                                <label for="exampleInputCity1">Tanggal Inkubasi</label>
+                                <input required type="text" name="tanggal_inkubasi" class="form-control text-white"
+                                    id="exampleInputCity1" value="{{ $egg->tanggal_inkubasi }}"
                                     style="background-color: #0E111E; border: 3px solid #252635;">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Tipe</label>
-                                <input required type="text" name="tipe" class="form-control text-white"
-                                    id="exampleInputEmail3" placeholder="Tipe Leopard Gecko"
-                                    style="background-color: #0E111E; border: 3px solid #252635;">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleSelectGender">Jenis Kelamin</label>
-                                <select required class="form-select" name="jenis_kelamin" id="exampleSelectGender"
-                                    style="background-color: #0E111E;">
-                                    <option disabled selected hidden class="text-white">Pilih Jenis Kelamin
-                                    </option>
-                                    <option value="jantan" class="text-white">Jantan</option>
-                                    <option value="betina" class="text-white">Betina</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputCity1">Kelahiran</label>
-                                <input required type="text" name="kelahiran" class="form-control text-white"
-                                    id="exampleInputCity1" placeholder="Tanggal Kelahiran"
-                                    style="background-color: #0E111E; border: 3px solid #252635;">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea1">Deskripsi</label>
-                                <textarea class="form-control text-white" name="deskripsi" id="exampleTextarea1"
-                                    rows="4" style="background-color: #0E111E; border: 3px solid #252635;"></textarea>
+                                <label for="exampleTextarea1">Keterangan</label>
+                                <textarea class="form-control text-white" name="keterangan" id="exampleTextarea1"
+                                    rows="4"
+                                    style="background-color: #0E111E; border: 3px solid #252635;">{{ $egg->keterangan }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputCity1">Perkawinan</label>
                                 <input required type="text" name="perkawinan" class="form-control text-white"
-                                    id="exampleInputCity1" placeholder="Perkawinan"
+                                    id="exampleInputCity1" value="{{ $egg->perkawinan }}"
                                     style="background-color: #0E111E; border: 3px solid #252635;">
                             </div>
                             <div class="form-group">
                                 <label>Upload Gambar</label>
-                                <input required type="file" name="url[]" class="file-upload-default"
-                                    id="profilePhotoInput" multiple>
+                                <input type="file" name="url" class="file-upload-default" id="profilePhotoInput"
+                                    multiple>
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control text-white file-upload-info" disabled
                                         placeholder="Upload Gambar"
@@ -75,6 +55,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                            <a href="{{ route('egg.index') }}" class="btn btn-light">Cancel</a>
                         </form>
                     </div>
                 </div>
