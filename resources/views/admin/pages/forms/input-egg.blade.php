@@ -29,8 +29,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Keterangan</label>
-                                <textarea class="form-control text-white" name="keterangan" id="exampleTextarea1"
-                                    rows="4" style="background-color: #0E111E; border: 3px solid #252635;"></textarea>
+                                <textarea required class="form-control text-white" name="keterangan"
+                                    id="exampleTextarea1" rows="4"
+                                    style="background-color: #0E111E; border: 3px solid #252635;"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputCity1">Perkawinan</label>
