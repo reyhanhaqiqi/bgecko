@@ -30,8 +30,8 @@
             </div>
 
             <div class="type">
-                <h5 class="card-title">Tipe Hewan</h5>
-                <p class="card-text text-capitalize">{{ $gecko->tipe }}</p>
+                <h5 class="card-title">Line Albino</h5>
+                <p class="card-text text-capitalize">{{ $gecko->line_albino }}</p>
             </div>
         </div>
 

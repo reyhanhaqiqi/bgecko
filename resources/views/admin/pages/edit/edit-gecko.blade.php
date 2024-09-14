@@ -30,9 +30,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Tipe</label>
-                                <input required type="text" name="tipe" class="form-control text-white"
-                                    id="exampleInputEmail3" value="{{ $gecko->tipe }}"
-                                    style="background-color: #0E111E; border: 3px solid #252635;">
+                                <select required class="form-select" name="line_albino" id="exampleSelectGender"
+                                    style="background-color: #0E111E;">
+                                    <option disabled selected hidden class="text-white">Pilih Line Albino
+                                    </option>
+                                    <option {{ $gecko->line_albino == 'bell' ? 'selected' : '' }}
+                                        class="text-white">Bell</option>
+                                    <option {{ $gecko->line_albino == 'tremper' ? 'selected' : '' }}
+                                        class="text-white">Tremper</option>
+                                    <option {{ $gecko->line_albino == 'rainwater' ? 'selected' : '' }}
+                                        class="text-white">Rainwater</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleSelectGender">Jenis Kelamin</label>

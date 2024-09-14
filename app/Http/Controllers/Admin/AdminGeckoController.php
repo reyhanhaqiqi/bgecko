@@ -26,7 +26,7 @@ class AdminGeckoController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'tipe' => 'required|string|max:255',
+            'line_albino' => 'required|string',
             'jenis_kelamin' => 'required|string',
             'kelahiran' => 'required|date',
             'deskripsi' => 'required|string|max:255',
@@ -38,7 +38,7 @@ class AdminGeckoController extends Controller
         $gecko = Gecko::create(
             $request->only([
                 'nama',
-                'tipe',
+                'line_albino',
                 'jenis_kelamin',
                 'kelahiran',
                 'deskripsi',
@@ -68,7 +68,7 @@ class AdminGeckoController extends Controller
     {
         $request->validate([
             'nama' => 'nullable|string|max:255',
-            'tipe' => 'nullable|string|max:255',
+            'line_albino' => 'nullable|string',
             'jenis_kelamin' => 'nullable|string',
             'kelahiran' => 'nullable|date',
             'deskripsi' => 'nullable|string|max:255',
@@ -100,7 +100,7 @@ class AdminGeckoController extends Controller
 
             $gecko->update([
                 'nama' => $request->nama,
-                'tipe' => $request->tipe,
+                'line_albino' => $request->line_albino,
                 'jenis_kelamin' => $request->jenis_kelamin,
                 'kelahiran' => $request->kelahiran,
                 'deskripsi' => $request->deskripsi,
@@ -110,7 +110,7 @@ class AdminGeckoController extends Controller
 
         $gecko->update([
             'nama' => $request->nama,
-            'tipe' => $request->tipe,
+            'line_albino' => $request->line_albino,
             'jenis_kelamin' => $request->jenis_kelamin,
             'kelahiran' => $request->kelahiran,
             'deskripsi' => $request->deskripsi,

@@ -62,7 +62,7 @@
                                     </td>
                                     <td class="text-capitalize text-white"
                                         style="font-size: 12px; background-color: #161B2F; border: 3px solid #252635;">
-                                        {{ $gecko->tipe }}
+                                        {{ $gecko->line_albino }}
                                     </td>
                                     <td class="text-capitalize text-white"
                                         style="font-size: 12px; background-color: #161B2F; border: 3px solid #252635;">

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('nama');
-            $table->string('tipe');
+            $table->enum('line_albino', ['bell', 'tremper', 'rainwater']);
             $table->enum('jenis_kelamin', ['jantan', 'betina']);
             $table->date('kelahiran');
             $table->longText('deskripsi')->nullable();

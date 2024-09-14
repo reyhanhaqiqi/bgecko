@@ -74,7 +74,7 @@
                 </thead>
                 <br><br>
                 <tbody>
-                  <tr t>
+                  <tr>
                     @foreach ($latestGeckos as $gecko)
                     <td class="text-center" style="background-color: #161B2F">
                       @foreach ($gecko->galleryGeckos as $galleryGecko)

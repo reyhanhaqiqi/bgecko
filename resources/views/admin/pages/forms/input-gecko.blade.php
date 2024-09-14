@@ -28,10 +28,15 @@
                                     style="background-color: #0E111E; border: 3px solid #252635;">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Tipe</label>
-                                <input required type="text" name="tipe" class="form-control text-white"
-                                    id="exampleInputEmail3" placeholder="Tipe Leopard Gecko"
-                                    style="background-color: #0E111E; border: 3px solid #252635;">
+                                <label for="exampleInputEmail3">Line Albino</label>
+                                <select required class="form-select" name="line_albino" id="exampleSelectGender"
+                                    style="background-color: #0E111E;">
+                                    <option disabled selected hidden class="text-white">Pilih Line Albino
+                                    </option>
+                                    <option value="bell" class="text-white">Bell</option>
+                                    <option value="tremper" class="text-white">Tremper</option>
+                                    <option value="rainwater" class="text-white">Rainwater</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleSelectGender">Jenis Kelamin</label>

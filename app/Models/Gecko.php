@@ -12,7 +12,7 @@ class Gecko extends Model
 
     protected $fillable = [
         'nama',
-        'tipe',
+        'line_albino',
         'jenis_kelamin',
         'kelahiran',
         'deskripsi',
