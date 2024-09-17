@@ -26,7 +26,8 @@
             <h4>TATA CARA PERAWATAN</h4>
             <h1 class="mt-4">Cara merawat<br><span>Leopard Gecko?</span></h1>
             <p>Download file pdf yang tersedia untuk membaca semua tata cara perawatan hingga semua gentik mengenai
-                Leopard Gecko !</p>
+                Leopard Gecko!</p>
+            <p>Sumber: Bilyan Octser dari Dawn of Gecko</p>
             <div class="button">
                 <a href="{{ asset('web/files/HandbookLeopardGecko_DawnOfGecko (BGecko).pdf') }}" download>Download
                     File</a>
