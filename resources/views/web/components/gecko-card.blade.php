@@ -24,7 +24,7 @@
 
     <div class="card-body">
         <div class="line-1">
-            <div class="name">
+            <div class="name" style="width: 50%">
                 <h5 class="card-title">Nama Hewan</h5>
                 <p class="card-text text-capitalize">{{ $gecko->nama }}</p>
             </div>

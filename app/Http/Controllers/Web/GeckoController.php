@@ -25,7 +25,7 @@ class GeckoController extends Controller
 
         $geckos = Gecko::where('id', 'like', "%$query%")
             ->orWhere('nama', 'like', "%$query%")
-            ->orWhere('tipe', 'like', "%$query%")
+            ->orWhere('line_albino', 'like', "%$query%")
             ->orWhere('jenis_kelamin', 'like', "%$query%")
             ->orWhere('kelahiran', 'like', "%$query%")
             ->orWhere('deskripsi', 'like', "%$query%")
